@@ -1,0 +1,19 @@
+  RewriteEngine On  
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ ./index.html [L]
+
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType text/css "access plus 1 minutes"
+	ExpiresByType image/gif "access plus 1 minutes"
+	ExpiresByType image/png "access plus 1 minutes"
+	ExpiresByType image/jpeg "access plus 1 minutes"
+	ExpiresByType application/x-javascript "access plus 1 minutes"
+	ExpiresByType application/javascript "access plus 1 minutes"
+	ExpiresByType application/x-icon "access plus 1 minutes"
+	ExpiresDefault "access plus 1 minutes"
+</IfModule>
